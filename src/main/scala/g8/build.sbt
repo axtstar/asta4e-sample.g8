@@ -1,7 +1,7 @@
-name := "asta4e-sample"
-version := "0.0.1"
+name := "$name$"
+version := "$version$"
 
-scalaVersion := "2.12.6"
+scalaVersion := "$scalaVersion$"
 
 libraryDependencies ++= Seq(
   "com.axtstar" %% "asta4e" % "0.0.4"
