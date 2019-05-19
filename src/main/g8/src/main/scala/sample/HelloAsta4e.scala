@@ -1,4 +1,5 @@
 package sample
+import com.axtstar.asta4e._
 
 object HelloAsta4e extends App {
 
