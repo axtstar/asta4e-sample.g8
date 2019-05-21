@@ -36,7 +36,7 @@ object HelloAsta4e extends App {
         row =>
           row.map {
             column =>
-              print(s"${column._1} ${column._2} ")
+              print(s"\${column._1} \${column._2} ")
           }
           println()
           //row To case class
@@ -49,6 +49,6 @@ object HelloAsta4e extends App {
   list.foreach{
     l =>
       //print sheetName and size
-      println(s"${l._1}: ${l._2.size}")
+      println(s"\${l._1}: \${l._2.size}")
   }
 }
