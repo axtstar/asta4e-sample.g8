@@ -14,3 +14,7 @@ First, you have to download excel samples from my repository to your project roo
 
 3. run
 
+> sbt run
+
+
+
