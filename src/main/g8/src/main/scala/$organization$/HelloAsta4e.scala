@@ -17,8 +17,8 @@ case class Code(
                )
 
 object HelloAsta4e extends App {
-  val readTemplate = "./src/resources/templates/read_template.xls"
-  val inputExcel = "./src/resources/input/code.xls"
+  val readTemplate = "read_template.xls"
+  val inputExcel = "code.xls"
   val ignoreSheetNames = List()
 
   //template
