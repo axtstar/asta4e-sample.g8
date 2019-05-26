@@ -22,4 +22,4 @@ First, you have to download excel samples from my repository to your project roo
 
 5. from java
 
-> java -jar target/scala-2.12/$name$-assembly-$version$.jar
+> java -jar target/scala-2.12/$name$.jar

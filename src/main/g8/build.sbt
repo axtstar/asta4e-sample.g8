@@ -10,7 +10,7 @@ lazy val commonSettings = Seq(
 )
 
 mainClass in assembly := Some("$organization$.HelloAsta4e")
-assemblyJarName in assembly := { s"\${name.value}-\${version.value}.jar" }
+assemblyJarName in assembly := { s"\${name.value}.jar" }
 
 lazy val root = (project in file("."))
   .settings(
