@@ -32,12 +32,13 @@ object HelloAsta4e extends App {
 
       // tuple of SheetName, Contents
       sheetName -> contents.map{
-        row.map {
-          column =>
-            print(s"\${column.theme_code},\${column.theme_name},")
-            print(s"\${column.start.getOrElse("")}〜\${column.end.getOrElse("")}")
-        }
-        println()
+        row =>
+          row.map {
+            column =>
+              print(s"\${column.theme_code},\${column.theme_name},")
+              print(s"\${column.start.getOrElse("")}〜\${column.end.getOrElse("")}")
+          }
+          println()
       }
   }
 
