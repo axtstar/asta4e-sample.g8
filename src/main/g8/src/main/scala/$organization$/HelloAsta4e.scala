@@ -1,20 +1,19 @@
 package $organization$
 
 import com.axtstar.asta4e._
-import com.axtstar.asta4e.core.ExcelHelper
 
 case class Code(
                  theme_code:String,
                  deactivated:String,
-                 `type`:Any,
-                 theme_name:Any,
-                 fi_coverage:Any,
-                 maintenance_information:Any,
-                 `f-term_theme`:Any,
-                 start:Any,
-                 end:Any,
-                 under_reanalysis:Any
-               )
+                 `type`:String,
+                 theme_name:String,
+                 fi_coverage:String,
+                 maintenance_information:String,
+                 `f-term_theme`:String,
+                 start:Option[Int],
+                 end:Option[Int],
+                 under_reanalysis:String
+)
 
 object HelloAsta4e extends App {
   val readTemplate = "read_template.xls"
@@ -22,7 +21,7 @@ object HelloAsta4e extends App {
   val ignoreSheetNames = List()
 
   //template
-  val results = ExcelMapper.getDataDown(readTemplate, inputExcel , ignoreSheetNames)
+  val results = ExcelMapper.by[Code].getDataDown(readTemplate, inputExcel , ignoreSheetNames)
 
   val list = results.map {
     result =>
@@ -33,15 +32,12 @@ object HelloAsta4e extends App {
 
       // tuple of SheetName, Contents
       sheetName -> contents.map{
-        row =>
-          row.map {
-            column =>
-              print(s"\${column._1} \${column._2} ")
-          }
-          println()
-          //row To case class
-          val target:Option[Code] = ExcelHelper.to[Code].from(row)
-          target
+        row.map {
+          column =>
+            print(s"\${column.theme_code},\${column.theme_name},")
+            print(s"\${column.start.getOrElse("")}〜\${column.end.getOrElse("")}")
+        }
+        println()
       }
   }
 
@@ -49,6 +45,6 @@ object HelloAsta4e extends App {
   list.foreach{
     l =>
       //print sheetName and size
-      println(s"\${l._1}: \${l._2.size}")
+      println(s"SHEET NAME=\${l._1}: SIZE=\${l._2.size}")
   }
 }

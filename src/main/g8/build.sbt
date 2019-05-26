@@ -2,10 +2,14 @@ import Dependencies._
 
 name :="$name$"
 
-ThisBuild / scalaVersion     := "$scalaVersion$"
-ThisBuild / version          := "0.1.0-SNAPSHOT"
-ThisBuild / organization     := "$organization$"
-ThisBuild / organizationName := "sample"
+lazy val commonSettings = Seq(
+  version := "0.1-SNAPSHOT",
+  organization := "$organization$",
+  scalaVersion := "$scalaVersion$",
+  test in assembly := {}
+)
+
+mainClass in assembly := Some("$organization$.HelloAsta4e")
 
 lazy val root = (project in file("."))
   .settings(
