@@ -3,7 +3,7 @@ import Dependencies._
 name :="$name$"
 
 lazy val commonSettings = Seq(
-  version := "0.1-SNAPSHOT",
+  version := "$version$",
   organization := "$organization$",
   scalaVersion := "$scalaVersion$",
   test in assembly := {}

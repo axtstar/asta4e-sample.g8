@@ -12,9 +12,14 @@ First, you have to download excel samples from my repository to your project roo
 
 > sbt compile
 
-3. run
+3. run from sbt
 
 > sbt run
 
+4. build
 
+> sbt assembly
 
+5. from java
+
+> java -jar target/scala-2.12/$name$-assembly-$version$.jar
