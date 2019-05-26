@@ -12,3 +12,6 @@ lazy val root = (project in file("."))
     name := "$name$",
     libraryDependencies += asta4e
   )
+
+resolvers +=
+  "Sonatype OSS Snapshots" at "https://oss.sonatype.org/content/repositories/snapshots"
