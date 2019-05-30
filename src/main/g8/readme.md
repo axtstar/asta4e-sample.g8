@@ -16,10 +16,10 @@ First, you have to download excel samples from my repository to your project roo
 
 > sbt run
 
-4. build
+4. create fat jar
 
 > sbt assembly
 
-5. from java
+5. execute jar
 
 > java -jar target/scala-2.12/$name$.jar
