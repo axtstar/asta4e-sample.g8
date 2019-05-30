@@ -2,6 +2,8 @@ package $organization$
 
 import com.axtstar.asta4e._
 
+import java.io.FileInputStream
+
 case class Code(
                  theme_code:String,
                  deactivated:String,
