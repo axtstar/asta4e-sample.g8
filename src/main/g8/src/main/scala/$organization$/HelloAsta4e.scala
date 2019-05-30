@@ -20,8 +20,11 @@ object HelloAsta4e extends App {
   val inputExcel = "code.xls"
   val ignoreSheetNames = List()
 
-  //template
-  val results = ExcelMapper.by[Code].getDataDown(readTemplate, inputExcel , ignoreSheetNames)
+  //read entire data
+  val results = ExcelMapper.by[Code]
+    .withLocation(readTemplate) //bindTemplate
+    .withIgnoreSheets(ignoreSheetNames) //ignore sheetNames
+    .getCCDown( new FileInputStream(inputExcel))// input file
 
   val list = results.map {
     result =>
